@@ -39,7 +39,7 @@
 数据传递方法: `POST`
 传递数据： `{'requestType'：2,'appSecurityCode':'DAPP2023','userAccount':'用户昵称','userPassword':'用户密码'}`
 传递数据示例:`{'requestType'：2,'appSecurityCode':'DAPP2023','userAccount':'Shufan Cai','userPassword':'1234'}`
-返回数据示例: 成功
+返回数据示例: 成功  
 
 ```
 {
@@ -76,6 +76,5 @@
 "message": "用户注册成功。"
 }
 对应数据库截图: 成功写入
-
 
 ![](assets/20231115_172517_screenshot.png)
