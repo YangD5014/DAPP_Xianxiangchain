@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Query Page</title>
+</head>
+<body>
+
+    <h2>输入ID查询用户信息</h2>
+
+    <label for="userId">Enter User ID:</label>
+    <input type="text" id="userId" name="userId">
+    <button onclick="queryUser()">Query User</button>
+
+    <div id="result"></div>
+
+    <script>
+        function queryUser() {
+            // 获取用户输入的用户ID
+            var userId = document.getElementById("userId").value;
+
+            // 构建查询URL
+            var apiUrl;
+
+            if (userId) {
+                // 如果输入了用户ID，查询特定用户
+                apiUrl = "http://www.xianxiangchain.xyz/DAPP/registration_test.php?userId=" + encodeURIComponent(userId);
+            } else {
+                // 否则查询所有用户信息
+                apiUrl = "http://www.xianxiangchain.xyz/DAPP/registration_test.php";
+            }
+
+            // 发起GET请求
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // 处理查询结果
+                    if (data.error) {
+                        document.getElementById("result").innerHTML = "Error: " + data.error;
+                    } else {
+                        // 显示查询结果
+                        document.getElementById("result").innerHTML = JSON.stringify(data, null, 2);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById("result").innerHTML = "An error occurred while querying the user.";
+                });
+        }
+    </script>
+
+</body>
+</html>
+

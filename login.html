@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register</title>
+</head>
+<body>
+
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" name="loginUsername" required>
+        <br>
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+        <br>
+        <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <h2>Register</h2>
+    <form id="registerForm">
+        <label for="registerUsername">Username:</label>
+        <input type="text" id="registerUsername" name="registerUsername" required>
+        <br>
+        <label for="registerPassword">Password:</label>
+        <input type="password" id="registerPassword" name="registerPassword" required>
+        <br>
+        <button type="button" onclick="register()">Register</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function login() {
+            var loginUsername = document.getElementById("loginUsername").value;
+            var loginPassword = document.getElementById("loginPassword").value;
+
+            // 在这里添加发送登录请求的代码，可以使用Fetch API或其他方式
+            // 示例：fetch("登录接口URL", { method: "POST", body: JSON.stringify({ username: loginUsername, password: loginPassword }), headers: { "Content-Type": "application/json" }})
+            // .then(response => response.json())
+            // .then(data => { // 处理登录结果 });
+
+
+            
+
+            // 示例：直接在页面上显示登录结果
+            document.getElementById("result").innerHTML = "Login: Username - " + loginUsername + ", Password - " + loginPassword;
+        }
+
+        function register() {
+            var registerUsername = document.getElementById("registerUsername").value;
+            var registerPassword = document.getElementById("registerPassword").value;
+
+            // 在这里添加发送注册请求的代码，可以使用Fetch API或其他方式
+            // 示例：fetch("注册接口URL", { method: "POST", body: JSON.stringify({ username: registerUsername, password: registerPassword }), headers: { "Content-Type": "application/json" }})
+            // .then(response => response.json())
+            // .then(data => { // 处理注册结果 });
+
+            // 示例：直接在页面上显示注册结果
+            document.getElementById("result").innerHTML = "Register: Username - " + registerUsername + ", Password - " + registerPassword;
+        }
+    </script>
+
+</body>
+</html>
