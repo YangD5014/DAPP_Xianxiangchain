@@ -1,6 +1,8 @@
 <?php
 
 header('Access-Control-Allow-Origin: *'); 
+// header('Access-Control-Allow-Origin: http://localhost:8082');
+// header('Access-Control-Allow-Origin: http://localhost:8080');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json; charset=utf-8'); 
@@ -29,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($requestType)) {
         // 如果requestType为空，返回错误信息
         http_response_code(400);
-        echo json_encode(['error' => '缺少DAPP安全码或请求类型参数，禁止查询！']);
+        echo json_encode(['error' => '缺少DAPP安全码或请求类型参数，禁止查询！','requestType' => $requestType,'appSecurityCode' => $appSecurityCode]);
         exit();
     }
 
