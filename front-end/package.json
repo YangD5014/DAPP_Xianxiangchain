@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "alchemy": "^0.0.8",
+    "alchemy-sdk": "^3.2.1"
+  }
+}

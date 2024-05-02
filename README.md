@@ -78,7 +78,23 @@
 }
 ```
 
-
 对应数据库截图: 成功写入
 
 ![](assets/20231115_172517_screenshot.png)
+
+
+智能合约接口说明文档：第一部分 用户登录注册、查询合约
+
+![](assets/20240503_021520_image.png)
+
+
+1. generateRandomAddress() 生成一个随机的哈希地址 不需要参数
+2. getAccountTypeCount() 获得某一类身份的用户总数 参数：int 0～2 0-运营方 1-卖家 2-消费者
+3. getUserCount() 获得合约中用户总数 不需要参数
+4. getUserThroughId() 通过 ID 查询用户 参数：int 该用户的 ID 值
+5. register() 注册、添加新用户 参数：1.用户名 string  2.身份类型 int
+6. userCount() 获得合约中用户总数
+7. usersAddress() 根据地址搜索用户 参数：哈希地址
+8. userId() 根据 ID 搜索用户 参数：int 用户ID
+
+备注： 之所以有些功能看起来重复 是因为 solidity 的语言特性 选一个用就好。
