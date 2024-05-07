@@ -82,19 +82,26 @@
 
 ![](assets/20231115_172517_screenshot.png)
 
-
 智能合约接口说明文档：第一部分 用户登录注册、查询合约
 
 ![](assets/20240503_021520_image.png)
 
+![](assets/20240507_124310_image.png)
 
 1. generateRandomAddress() 生成一个随机的哈希地址 不需要参数
 2. getAccountTypeCount() 获得某一类身份的用户总数 参数：int 0～2 0-运营方 1-卖家 2-消费者
 3. getUserCount() 获得合约中用户总数 不需要参数
 4. getUserThroughId() 通过 ID 查询用户 参数：int 该用户的 ID 值
-5. register() 注册、添加新用户 参数：1.用户名 string  2.身份类型 int
+5. register() 注册、添加新用户 参数：1.用户名 string  2.身份类型 int 3.密码 string
 6. userCount() 获得合约中用户总数
 7. usersAddress() 根据地址搜索用户 参数：哈希地址
 8. userId() 根据 ID 搜索用户 参数：int 用户ID
+9. getUserInfo() 根据传入的字符来选择查询模式 参数 1.查询模式 string "All" -查询所有人 "Operator" -查询所有运营方 "Consumer" - 查询所有消费者 "Merchant" - 查询所有商家
+10. ContractInfo() 无参数 调用后返回一句话 以此验证是新的合约生效了
 
 备注： 之所以有些功能看起来重复 是因为 solidity 的语言特性 选一个用就好。
+
+
+新的合约地址：
+
+0x3ed811ff9A47F6E2f1c6436f5F4076d0355B5a75
